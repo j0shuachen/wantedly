@@ -1,0 +1,29 @@
+.splashcontainer{
+
+  display: flex;
+  flex-grow: 1;
+  background-image: url('http://res.cloudinary.com/dxeyfggji/image/upload/v1513257128/drew-graham-344554_copy.jpg');
+  background-repeat: no-repeat;
+
+
+}
+
+.splashpagescreener{
+  display: flex;
+  flex-grow: 1;
+  background: rgba(255, 0, 110, 0.3);
+  background: linear-gradient(to right, rgba(255,0,110, 0.3), rgba(255, 240, 10, 0.3));
+}
+
+
+
+
+
+.splashtitle{
+  color: white;
+  font-weight: 800;
+  font-size: 50px;
+  box-sizing: border-box;
+  padding-left: 25px;
+  padding-top: 25px;
+}

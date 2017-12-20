@@ -1,0 +1,17 @@
+.loginsignup{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.headerbutton{
+  display: flex;
+  flex-direction: column;
+  color: black;
+  font-weight: 300;
+  text-decoration: none;
+}

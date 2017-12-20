@@ -13,3 +13,62 @@
  *= require_tree .
  *= require_self
  */
+
+
+ body, html, #root, .container {
+    display: flex;
+    flex-basis: 100%;
+    flex-grow: 1;
+    min-height: 100%;
+    font-size: 16px;
+    line-height: 1.45;
+    font-family: "Graphik Meetup",helvetica,arial,sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    text-rendering: optimizeLegibility;
+    -moz-font-feature-settings: "liga","kern";
+    -moz-font-feature-settings: "liga=1, kern=1";
+    -ms-font-feature-settings: "liga","kern";
+    -o-font-feature-settings: "liga","kern";
+    -webkit-font-feature-settings: "liga","kern";
+    font-feature-settings: "liga","kern";
+  }
+
+  header, footer{
+    height: 50px;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .foot{
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+  }
+
+ .linkedinlink, .foot, .linkedinlogo{
+   display: flex;
+
+  }
+
+  .linkedinlogo{
+    height: 20px;
+  }
+
+  .linkedinlink{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .headerbarlogo{
+    display: flex;
+    width: 30%;
+    height: 50px;
+    align-items: center;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
