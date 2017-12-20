@@ -1,7 +1,7 @@
 class Api::EndorsementsController < ApplicationController
 
   def index
-    @endorsements = Endorsement.where('user_id=?', params[:id])
+    @endorsements = Endorsement.all
     render :index
   end
 
