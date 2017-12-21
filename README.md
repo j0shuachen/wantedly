@@ -35,7 +35,7 @@
 
 #### INDEX
 
-![alt text](https://raw.githubusercontent.com/j0shuachen/wantedly/master/docs/index_page.png?token=Aa-KQ4ovYugWp4CW_gR2ioE7UpH_uzeRks5aRQmHwA%3D%3D "index"")
+![alt text](https://raw.githubusercontent.com/j0shuachen/wantedly/master/docs/index_page.png?token=Aa-KQ34FHldC_TPp3FFbjGWwbal30nnmks5aRQ2OwA%3D%3D "index")
 
 #### PROFILE
 
