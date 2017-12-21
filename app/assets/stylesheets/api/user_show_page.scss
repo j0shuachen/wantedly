@@ -167,7 +167,7 @@
   font-size: 18px;
 }
 
-.skillsubmit{
+.skillsubmit, .fakesubmit{
   display: flex;
   flex-direction: column;
   background: red;
@@ -179,6 +179,15 @@
   align-items: center;
   justify-content: center;
   margin-left: 20px;
+}
+
+.fakesubmit{
+  background: rgba(255, 0, 0, 0.4);
+
+}
+
+.skillsubmit:hover{
+  cursor: pointer;
 }
 
 .createendorsement{
@@ -195,6 +204,11 @@
   color: black;
   align-items: center;
   margin-left: 5px;
+
+}
+
+.createendorsement:hover{
+  cursor: pointer;
 }
 
 .endorsepic{

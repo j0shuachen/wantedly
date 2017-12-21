@@ -157,7 +157,7 @@ class UserShow extends React.Component{
 
           <div className='skillform'>
             <input className='skillinput' onChange={this.updateSkill} value={this.state.newSkill} placeholder='add a new skill?'/>
-            <div onClick={this.createSkill} className='skillsubmit'>submit</div>
+            {this.state.newSkill === '' ?  <div  className='fakesubmit'>submit</div> : <div onClick={this.createSkill} className='skillsubmit'>submit</div>}
           </div>
         </div>
 
