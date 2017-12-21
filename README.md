@@ -1,9 +1,10 @@
-# WANTEDLY PROJECT
+#### WANTEDLY PROJECT
+
 =====================================
 
-## LIVE LINK: https://wantedlee.herokuapp.com/#/
+### LIVE LINK: https://wantedlee.herokuapp.com/#/
 
-## MAIN PROJECT MVP
+### MAIN PROJECT MVP
 
 ### Build a web app where a user can list his/her skills in a profile page and recommend/endorse skills to other users.
 
@@ -87,7 +88,7 @@
 
 -----------------------------------
 
-###  AFTER INTERVIEW PROCESS TWEAKS FOR PORTFOLIO
+### TWEAKS FOR PORTFOLIO AFTER INTERVIEW
 ============================================================
 
 #### 1. add scoped uniqueness to prevent a user from endorsing the same skill for the same user
