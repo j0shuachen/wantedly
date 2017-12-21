@@ -1,12 +1,12 @@
 # WANTEDLY PROJECT
 
+## LIVE LINK: https://wantedlee.herokuapp.com/#/
+
 ## MAIN PROJECT MVP
 
 Build a web app where a user can list his/her skills in a profile page and recommend/endorse skills to other users.
 
-
 ### INITIAL MOCKUP
-
 
 ![alt text](https://raw.githubusercontent.com/j0shuachen/wantedly/master/docs/wantedlywireframe.png?token=Aa-KQ-IYxTliLh95_yrANKR--6-xPf9hks5aRPetwA%3D%3D "mockup")
 
@@ -49,3 +49,5 @@ Build a web app where a user can list his/her skills in a profile page and recom
 #### -add scoped uniqueness to prevent a user from endorsing the same skill for the same user
 
 #### -add verification to prevent unauthorized skill creation on profiles that do not belong to the current user
+
+#### -break down components further

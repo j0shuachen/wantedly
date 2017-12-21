@@ -26,7 +26,7 @@ class UserIndex extends React.Component{
         <Link to={profilelink} key={idx} className='indexprofile'>
           <div className='indexcoverpic'></div>
           <img className='indexprofilepic' src={user.image_url}/>
-            <div className='indexprofilename'>{user.f_name + ' ' + user.l_name}</div>
+          <div className='indexprofilename'>{user.f_name + ' ' + user.l_name}</div>
         </Link>
 
       );

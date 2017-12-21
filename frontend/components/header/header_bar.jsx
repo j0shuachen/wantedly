@@ -22,7 +22,7 @@ class HeaderBar extends React.Component{
       },
       3:{
         username: 'guest3',
-        password:'guest11',
+        password: 'guest11',
       },
       4:{
         username: 'guest4',
@@ -39,20 +39,24 @@ class HeaderBar extends React.Component{
 
   render(){
     const personalGreeting = (currentUser, logout) => (
+
       <div className="loginsignup">
         <Link to="/users" className="headerbutton" onClick={this.demo}> Demo </Link>
         <div className='greetingname'>{'Hi, ' + currentUser.username + '!'}</div>
         <Link to="/"className="headerbutton" onClick={logout}> Log Out </Link>
       </div>
+      
     );
 
   const sessionLinks =() =>{
     return (
+
       <div className="loginsignup">
         <Link to="/" className="headerbutton" onClick={this.demo}> Demo </Link>
         <Link to="/login" className="headerbutton"> Login </Link>
         <Link to="/signup" className="headerbutton"> Signup </Link>
       </div>
+
     );
   };
 

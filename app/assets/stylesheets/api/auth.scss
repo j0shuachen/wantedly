@@ -38,6 +38,10 @@
   border: 1px black solid;
 }
 
+.loginformbox{
+  height: 450px;
+}
+
 .signupformtop{
   display: flex;
   height: 70px;
@@ -56,6 +60,10 @@
   box-sizing: border-box;
 }
 
+.loginformbody{
+  height: 250px;
+}
+
 
 .usernameform{
   display: flex;
@@ -67,6 +75,8 @@
 .signupinput{
   display: flex;
   height: 30px;
+  min-height: 30px;
+  box-sizing: border-box;
 }
 
 

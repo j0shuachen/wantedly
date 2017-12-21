@@ -38,8 +38,8 @@ user19 = User.create!(username: Faker::Internet.unique.user_name, password: "gue
 
 user20 = User.create!(username: "guest1", password: "guest11", f_name: "Priscilla", l_name: "Mack", location: Faker::Address.city, email: Faker::Internet.free_email('mss.prscila4'), image_url: 'https://res.cloudinary.com/dxeyfggji/image/upload/v1513672488/pexels-photo-164262.jpg', occupation: Faker::Job.title, gender: 'f', age: 32 )
 user21 = User.create!(username: "guest2", password: "guest11", f_name: "Laurie", l_name: "Ling", location: Faker::Address.city, email: Faker::Internet.free_email('lling1'), image_url: 'https://res.cloudinary.com/dxeyfggji/image/upload/v1513672488/pexels-photo-157023.jpg', occupation: Faker::Job.title, gender: 'f', age: 32 )
-user22 = User.create!(username: Faker::Internet.unique.user_name, password: "guest11", f_name: "Will", l_name:" Winger", location: Faker::Address.city, email: Faker::Internet.free_email('the.williewinger'), image_url: 'https://res.cloudinary.com/dxeyfggji/image/upload/v1513672487/pexels-photo-91227.jpg', occupation: Faker::Job.title, gender: 'm', age: 32 )
-user23 = User.create!(username: Faker::Internet.unique.user_name, password: "guest11", f_name: "Omar", l_name:" Kalif", location: Faker::Address.city, email: Faker::Internet.free_email('okeefin33'), image_url: 'https://res.cloudinary.com/dxeyfggji/image/upload/v1513672487/person-young-man-beard-emotions-157966.jpg', occupation: Faker::Job.title, gender: 'm', age: 33 )
+user22 = User.create!(username: "guest3", password: "guest11", f_name: "Will", l_name:" Winger", location: Faker::Address.city, email: Faker::Internet.free_email('the.williewinger'), image_url: 'https://res.cloudinary.com/dxeyfggji/image/upload/v1513672487/pexels-photo-91227.jpg', occupation: Faker::Job.title, gender: 'm', age: 32 )
+user23 = User.create!(username: "guest4", password: "guest11", f_name: "Omar", l_name:" Kalif", location: Faker::Address.city, email: Faker::Internet.free_email('okeefin33'), image_url: 'https://res.cloudinary.com/dxeyfggji/image/upload/v1513672487/person-young-man-beard-emotions-157966.jpg', occupation: Faker::Job.title, gender: 'm', age: 33 )
 
 
 USERS = {"user1" => user1, "user2" =>user2, "user3" =>user3, "user4" =>user4, "user5" =>user5, "user6" =>user6,
@@ -77,37 +77,3 @@ end
 
 skill_creation()
 endorsement_creation()
-
-
-# skill1 = Skill.create!(skill: SKILLS[rand(20)], user_id: user1.id)
-# skill2 = Skill.create!(skill: SKILLS[rand(20)], user_id: user1.id)
-# skill3 = Skill.create!(skill: SKILLS[rand(20)], user_id: user1.id)
-# skill4 = Skill.create!(skill: SKILLS[rand(20)], user_id: user1.id)
-# skill5 = Skill.create!(skill: SKILLS[rand(20)], user_id: user2.id)
-# skill6 = Skill.create!(skill: SKILLS[rand(20)], user_id: user2.id)
-# skill7 = Skill.create!(skill: SKILLS[rand(20)], user_id: user3.id)
-# skill8 = Skill.create!(skill: SKILLS[rand(20)], user_id: user3.id)
-# skill9 = Skill.create!(skill: SKILLS[rand(20)], user_id: user4.id)
-# skill10 = Skill.create!(skill: SKILLS[rand(20)], user_id: user4.id)
-# skill11 = Skill.create!(skill: SKILLS[rand(20)], user_id: user5.id)
-# skill12 = Skill.create!(skill: SKILLS[rand(20)], user_id: user6.id)
-# skill13 = Skill.create!(skill: SKILLS[rand(20)], user_id: user7.id)
-# skill14 = Skill.create!(skill: SKILLS[rand(20)], user_id: user7.id)
-# skill15 = Skill.create!(skill: SKILLS[rand(20)], user_id: user8.id)
-# skill16 = Skill.create!(skill: SKILLS[rand(20)], user_id: user9.id)
-# skill17 = Skill.create!(skill: SKILLS[rand(20)], user_id: user10.id)
-# skill18 = Skill.create!(skill: SKILLS[rand(20)], user_id: user11.id)
-# skill19 = Skill.create!(skill: SKILLS[rand(20)], user_id: user12.id)
-# skill20 = Skill.create!(skill: SKILLS[rand(20)], user_id: user13.id)
-# skill21 = Skill.create!(skill: SKILLS[rand(20)], user_id: user14.id)
-# skill22 = Skill.create!(skill: SKILLS[rand(20)], user_id: user15.id)
-# skill23 = Skill.create!(skill: SKILLS[rand(20)], user_id: user16.id)
-# skill24 = Skill.create!(skill: SKILLS[rand(20)], user_id: user17.id)
-# skill25 = Skill.create!(skill: SKILLS[rand(20)], user_id: user18.id)
-# skill26 = Skill.create!(skill: SKILLS[rand(20)], user_id: user19.id)
-# skill27 = Skill.create!(skill: SKILLS[rand(20)], user_id: guest1.id)
-# skill28 = Skill.create!(skill: SKILLS[rand(20)], user_id: guest2.id)
-# skill29 = Skill.create!(skill: SKILLS[rand(20)], user_id: guest3.id)
-# skill30 = Skill.create!(skill: SKILLS[rand(20)], user_id: guest4.id)
-# skill31 = Skill.create!(skill: SKILLS[rand(20)], user_id: user1.id)
-# skill32 = Skill.create!(skill: SKILLS[rand(20)], user_id: user1.id)
