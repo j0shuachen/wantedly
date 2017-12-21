@@ -71,4 +71,6 @@
     align-items: center;
     padding-left: 10px;
     box-sizing: border-box;
+    text-decoration: none;
+    color: black;
   }

@@ -8,36 +8,36 @@ export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
 });
-export const receiveEndorsements = skills => ({
+export const receiveSkills = skills => ({
   type: RECEIVE_SKILLS,
   skills
 });
 
-export const receiveEndorsement = skill =>({
+export const receiveSkill = skill =>({
   type: RECEIVE_SKILL,
   skill
 });
 
-export const fetchEndorsements = filters => dispatch =>(
-  APIUtil.fetchEndorsements(filters).then(skilles =>(
-    dispatch(receiveEndorsements(skilles))
+export const fetchSkills = filters => dispatch =>(
+  APIUtil.fetchSkills(filters).then(skilles =>(
+    dispatch(receiveSkills(skilles))
   ))
 );
 
-export const fetchEndorsement = id => dispatch =>(
-  APIUtil.fetchEndorsement(id).then(skille =>(
-    dispatch(receiveEndorsement(skille))
+export const fetchSkill = id => dispatch =>(
+  APIUtil.fetchSkill(id).then(skille =>(
+    dispatch(receiveSkill(skille))
   ))
 );
 
-export const createEndorsement = skill => dispatch => (
-  APIUtil.createEndorsement(skill).then(skille => (
-    dispatch(receiveEndorsement(skille))
+export const createSkill = skill => dispatch => (
+  APIUtil.createSkill(skill).then(skille => (
+    dispatch(receiveSkill(skille))
   ))
 );
 
-export const updateEndorsement = skill => dispatch => {
-  return APIUtil.updateEndorsement(skill).then(resp => {
-    dispatch(receiveEndorsement(resp));
+export const updateSkill = skill => dispatch => {
+  return APIUtil.updateSkill(skill).then(resp => {
+    dispatch(receiveSkill(resp));
   }) ;
 };

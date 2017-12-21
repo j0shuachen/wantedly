@@ -1,5 +1,7 @@
 import React from 'react';
 import Loading from '../loading/loading';
+import {Link} from 'react-router-dom';
+
 class UserIndex extends React.Component{
 
   constructor(props){
@@ -17,13 +19,14 @@ class UserIndex extends React.Component{
   userMapper(){
     const ar = [];
     this.props.users.forEach((user, idx) => {
+      const profilelink = `/users/${user.id}`;
       ar.push(
 
-        <div key={idx} className='indexprofile'>
+        <Link to={profilelink} key={idx} className='indexprofile'>
           <div className='indexcoverpic'></div>
           <img className='indexprofilepic' src={user.image_url}/>
             <div className='indexprofilename'>{user.f_name + ' ' + user.l_name}</div>
-        </div>
+        </Link>
 
       );
     });
@@ -44,9 +47,7 @@ class UserIndex extends React.Component{
 
     return(
       <div className='userindexcontainer'>
-
-      <div className='profileholder'>{this.userMapper()}</div>
-
+        <div className='profileholder'>{this.userMapper()}</div>
       </div>
     );
 

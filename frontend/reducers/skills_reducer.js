@@ -16,8 +16,8 @@ const SkillReducer = (state = initialState, action) => {
   let newState = merge({}, state);
 
   switch(action.type){
-
     case RECEIVE_SKILLS:
+
       return action.skills;
 
     case RECEIVE_SKILL:

@@ -11,18 +11,21 @@ import {
 import Splash from './splash_page';
 import HeaderBar from './header/header_bar_container';
 import {SignUpContainer, LogInContainer} from './session/session_container';
-import UserIndexContainer from './user/user_container';
+import UserIndexContainer from './user/user_index_container';
+import UserShowContainer from './user/user_show_container';
+
 const App = () => (
 
   <div className='container'>
     <header>
-      <div className='headerbarlogo'>W &nbsp; A &nbsp; N &nbsp; T &nbsp; E &nbsp; D &nbsp; L &nbsp; Y</div>
+      <Link to='/users' className='headerbarlogo'>W &nbsp; A &nbsp; N &nbsp; T &nbsp; E &nbsp; D &nbsp; L &nbsp; Y</Link>
       <HeaderBar/>
     </header>
 
     <Switch>
       <Route path='/login' component={LogInContainer}/>
       <Route path='/signup' component={SignUpContainer}/>
+        <Route exact path='/users/:id' component={UserShowContainer}/>
         <Route path='/users' component={UserIndexContainer}/>
 
       <Route path='/' component={Splash}/>
