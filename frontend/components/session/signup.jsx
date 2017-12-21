@@ -10,7 +10,6 @@ class SignUpForm extends React.Component {
       username: '',
       email:'',
       password: '',
-      location: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.cap= this.cap.bind(this);
@@ -61,27 +60,11 @@ class SignUpForm extends React.Component {
   render () {
     return (
       <div className="signupcontainer">
-
+        <div className='signupscreener'>
         <form onSubmit={this.handleSubmit} className="signupformbox">
 
           <div className="signupformtop"> Sign Up </div>
           <div className='signupformbody'>
-
-            <label className="usernameform">
-              <span className="signupques">Username:</span>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="signupinput"/>
-            </label>
-
-            <label className="usernameform">
-              <span className="signupques">Password:</span>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="signupinput"/>
-            </label>
 
             <label className="usernameform">
               <span className="signupques">First Name:</span>
@@ -99,6 +82,22 @@ class SignUpForm extends React.Component {
                   onChange={this.update('l_name')}
                   className="signupinput"
                   placeholder=""/>
+            </label>
+
+            <label className="usernameform">
+              <span className="signupques">Username:</span>
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="signupinput"/>
+            </label>
+
+            <label className="usernameform">
+              <span className="signupques">Password:</span>
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="signupinput"/>
             </label>
 
             <label className="usernameform">
@@ -126,6 +125,7 @@ class SignUpForm extends React.Component {
           </div>
 
         </form>
+      </div>
       </div>
       );
     }

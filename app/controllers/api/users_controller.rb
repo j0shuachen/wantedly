@@ -31,7 +31,9 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.image_url = PICS[rand(20)]
+    if !user_params["image_url"]
+      @user.image_url = PICS[rand(20)]
+    end
 
     if @user.save
       sign_in(@user)
@@ -71,7 +73,7 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :l_name, :f_name, :email)
+    params.require(:user).permit(:username, :password, :l_name, :f_name, :email, :location, :age, :gender, :occupation)
   end
 
 

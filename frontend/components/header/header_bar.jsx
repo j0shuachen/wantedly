@@ -18,53 +18,30 @@ class HeaderBar extends React.Component{
       },
       2:{
         username: 'guest2',
-        password: 'guest21'
+        password: 'guest11'
       },
       3:{
         username: 'guest3',
-        password:'guest31',
+        password:'guest11',
       },
       4:{
         username: 'guest4',
-        password: 'guest41'
+        password: 'guest11'
       },
-      5:{
-        username: 'guest5',
-        password: 'guest51'
-      },
-      6:{
-        username: 'guest6',
-        password: 'guest61'
-      },
-      7:{
-        username: 'guest7',
-        password: 'guest71'
-      },
-      8:{
-        username: 'guest8',
-        password: 'guest81'
-      },
-      9:{
-        username: 'guest9',
-        password: 'guest91'
-      },
-      10:{
-        username: 'guest10',
-        password: 'guest101'
-      }
+
     };
 
 
-      const num = Math.floor((Math.random() * 10) + 1) ;
+      const num = Math.floor((Math.random() * 4) + 1) ;
       const user= guests[num];
-      this.props.login({user}).then(() => this.props.history.push('/decks'));
+      this.props.login({user}).then(()=>this.props.history.goBack());
     }
 
   render(){
     const personalGreeting = (currentUser, logout) => (
       <div className="loginsignup">
         <Link to="/users" className="headerbutton" onClick={this.demo}> Demo </Link>
-        <div className='greetingname'>{'Hi, ' + currentUser.name + '!'}</div>
+        <div className='greetingname'>{'Hi, ' + currentUser.username + '!'}</div>
         <Link to="/"className="headerbutton" onClick={logout}> Log Out </Link>
       </div>
     );

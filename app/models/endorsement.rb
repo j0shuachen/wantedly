@@ -1,5 +1,7 @@
 class Endorsement < ApplicationRecord
 
+# add uniqueness validation later on
+
   belongs_to :endorser,
   primary_key: :id,
   foreign_key: :user_id,
@@ -9,5 +11,5 @@ class Endorsement < ApplicationRecord
   primary_key: :id,
   foreign_key: :skill_id,
   class_name: :Skill
-  
+
 end

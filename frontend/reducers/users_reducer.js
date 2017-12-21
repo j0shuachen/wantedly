@@ -21,7 +21,6 @@ const UserReducer = (state = initialState, action) => {
       return action.users;
 
     case RECEIVE_USER:
-    console.log(action);
       const newUser= {[action.user.id]: action.user};
       return newUser;
 

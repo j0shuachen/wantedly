@@ -16,13 +16,15 @@ class UserShow extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchUser(this.props.match.params.id).then(() => this.setState({check: true}));
-    this.props.fetchSkills(this.props.match.params);
+    this.props.fetchUser(this.props.match.params.id).then(
+      () => this.props.fetchSkills(this.props.match.params), this.setState({check: true}));
+
   }
 
   componentWillMount(){
-    this.props.fetchUser(this.props.match.params.id).then(() => this.setState({check: true}));
-    this.props.fetchSkills(this.props.match.params);
+    this.props.fetchUser(this.props.match.params.id).then(
+      () => this.props.fetchSkills(this.props.match.params), this.setState({check: true}));
+
   }
 
 
@@ -34,8 +36,9 @@ class UserShow extends React.Component{
 
     if(nextProps.match.params.id !== this.props.match.params.id){
 
-      this.props.fetchUser(nextProps.match.params.id).then(() => this.setState({check: true}));
-      this.props.fetchSkills(nextProps.match.params);
+      this.props.fetchUser(nextProps.match.params.id).then(
+        () => this.props.fetchSkills(nextProps.match.params),
+        this.setState({check: true}));
 
     }
 
@@ -44,7 +47,10 @@ class UserShow extends React.Component{
 
   createEndorsement(e){
     const skill = e.target.id;
-    this.props.createEndorsement({endorsement: {user_id: 15, skill_id: skill}}).then(()=> this.props.fetchSkills({id: this.props.match.params.id}));
+    const user_id = this.props.currentUser.id;
+    const image_url = this.props.currentUser.image_url;
+    // console.log(image_url);
+    this.props.createEndorsement({endorsement: {user_id: user_id, skill_id: skill, image_url: image_url}}).then(()=> this.props.fetchSkills({id: this.props.match.params.id}));
   }
 
 
@@ -55,10 +61,12 @@ class UserShow extends React.Component{
     const ar = [];
     const counter = endorsements.length > 10 ? 10 : endorsements.length;
     for(var i = 0; i < counter; i ++){
+      // console.log(endorsements[i]);
       var profilelink = `/users/${endorsements[i].user_id}`;
-      console.log(profilelink);
+      // console.log(profilelink);
       ar.push(
         <Link key={i} to={profilelink} className='endorsementlink'>
+          <img className='endorsepic' src={endorsements[i].image_url}/>
           {endorsements[i].user_id}
         </Link>
       );
@@ -82,20 +90,22 @@ class UserShow extends React.Component{
 
 
   skillsMapper(){
-    const skills = this.props.skills;
+    var skills = this.props.skills;
     const ar = [];
-    console.log(skills, 'skiler');
+    skills = skills.sort((a,b) => {
+      return b.len - a.len;
+    });
     skills.forEach((skill, idx) => {
-      const endorsements = skill.endorsements ? skill.endorsements.length : null;
+      const endorsements = skill.endorsers ? skill.endorsers.length : null;
       ar.push(
 
         <div key={idx} className='skillholder'>
             <div className='endorsementnum'>{endorsements}</div>
-            <div id={skill.id} className='createendorsement' onClick={this.createEndorsement}>+</div>
+          {this.props.currentUser ? <div id={skill.id} className='createendorsement' onClick={this.createEndorsement}>+</div> : <Link className='createendorsement' to='/login'>+ </Link>}
             <div className='skill' >
             <div className='skillname'>{skill.skill}</div>
             </div>
-            <div className='endorsementholder'>{this.endorsementMapper(skill.endorsements)}</div>
+            <div className='endorsementholder'>{this.endorsementMapper(skill.endorsers)}</div>
         </div>
 
 
@@ -107,10 +117,10 @@ class UserShow extends React.Component{
   }
 
   render(){
-    // console.log(this.props);
+    // console.log('props', this.props);
     const user = this.props.user;
 
-    if(this.state.check === false || !user){
+    if(this.state.check === false || !this.props.user){
       return(
         <Loading/>
       );
@@ -128,17 +138,21 @@ class UserShow extends React.Component{
       <div className='usershowcontainer'>
 
         <div className='userleftpanel'>
-          <div className='userprofilepic'></div>
+          <img className='userprofilepic' src={user.image_url}/>
           <div className='usershowprofile'>
-            {user.username ?  <div className='profileline'>{user.username}</div> : null }
-            {user.f_name ? <div className='profileline'>{name}</div> : null }
+           <div className='profileline'>username: {user.username}</div>
+            <div className='profileline'>name: {name}</div>
+            <div className='profileline'>occupation: {user.occupation ? user.occupation : 'unknown'}</div>
+            <div className='profileline'>location: {user.location ? user.location : 'unknown'}</div>
+            <div className='profileline'>age: {user.age ? user.age : 'unknown'}</div>
+            <div className='profileline'>gender: {user.gender ? user.gender : 'unknown'}</div>
           </div>
         </div>
 
         <div className='userrightpanel'>
           <div className='skillsheader'>S &nbsp; K &nbsp; I &nbsp; L &nbsp; L &nbsp; S </div>
           <div className='skillscontainer'>
-            {user.skills ? this.skillsMapper() : null}
+            {this.state.check ? this.skillsMapper() : null}
           </div>
 
           <div className='skillform'>

@@ -1,1 +1,1 @@
-json.extract! @skill, :id, :user_id, :user, :skill, :endorsements
+json.extract! @skill, :id, :user_id, :user, :skill, :endorsers

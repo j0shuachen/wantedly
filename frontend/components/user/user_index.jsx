@@ -20,6 +20,7 @@ class UserIndex extends React.Component{
     const ar = [];
     this.props.users.forEach((user, idx) => {
       const profilelink = `/users/${user.id}`;
+      // console.log(user);
       ar.push(
 
         <Link to={profilelink} key={idx} className='indexprofile'>
@@ -36,7 +37,6 @@ class UserIndex extends React.Component{
   }
 
   render(){
-    console.log(this.props);
 
     if(this.state.check === false){
       return(

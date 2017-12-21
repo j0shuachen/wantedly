@@ -29,10 +29,9 @@ const SessionReducer= (state = nullUser, action) =>{
         errors
       });
 
-    case RECEIVE_USER:
-    console.log(action, 'action');
-      const user = {[action.user.id]: action.user};
-      return user;
+    // case RECEIVE_USER:
+    //   const user = {[action.user.id]: action.user};
+    //   return merge({}, state, user);
 
     case UPDATE_USER:
       const update = merge({}, state);

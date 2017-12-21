@@ -2,14 +2,15 @@ class Api::SkillsController < ApplicationController
 
   def index
     @skills = Skill.where('user_id=?', params[:id])
-    # @skills = Skill.joins(:endorsements).group('skills.id').order("count(endorsements.user_id) DESC")
+
+
 
     render :index
   end
 
   def create
     @skill = Skill.new(skill_params)
-    
+
     if @skill.save
       render :show
     else

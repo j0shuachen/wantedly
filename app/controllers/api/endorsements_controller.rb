@@ -32,7 +32,7 @@ class Api::EndorsementsController < ApplicationController
   end
 
   def endorsement_params
-    params.require(:endorsement).permit(:skill_id, :user_id)
+    params.require(:endorsement).permit(:skill_id, :user_id, :image_url)
   end
 
 

@@ -34,6 +34,7 @@
     -o-font-feature-settings: "liga","kern";
     -webkit-font-feature-settings: "liga","kern";
     font-feature-settings: "liga","kern";
+    min-width: 1000px;
   }
 
   header, footer{

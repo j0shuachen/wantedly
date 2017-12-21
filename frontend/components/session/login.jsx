@@ -21,7 +21,7 @@ class LogInForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user}).then(()=>this.props.history.push('/groups'));
+    this.props.processForm({user}).then(()=>this.props.history.goBack());
   }
 
 
@@ -53,8 +53,8 @@ class LogInForm extends React.Component {
 
   render () {
     return (
-      <div className="signupcontainer">
-
+      <div className="logincontainer">
+        <div className='loginscreener'>
         <form onSubmit={this.handleSubmit} className="loginformbox">
           <div className="signupformtop">Login</div>
 
@@ -89,6 +89,7 @@ class LogInForm extends React.Component {
         </div>
 
         </form>
+        </div>
       </div>
       );
     }

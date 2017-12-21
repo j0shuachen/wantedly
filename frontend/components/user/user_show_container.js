@@ -5,8 +5,7 @@ import {createEndorsement} from '../../actions/endorsement_actions';
 import UserShow from './user_show';
 
 const mapStateToProps = (state, {match}) => {
-  console.log(state, 'state');
-
+  console.log(state);
   return {
     currentUser: state.session.currentUser,
     user: Object.values(state.users)[0],
